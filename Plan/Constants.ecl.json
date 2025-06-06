@@ -1,6 +1,6 @@
 {
     "1. Cost Estimation": {
-      "1.1 Java Spark Runtime Cost": {
+      "1.1 Java Spring boot Runtime Cost": {
         "Cluster Configuration": {
           "Number of Executors": 4,
           "Executor Memory": "8 GB",
@@ -28,14 +28,14 @@
     },
     "2. Code Fixing and Data Recon Testing Effort Estimation": {
       "2.1 Estimated Effort in Hours": {
-        "Manual intervention and solutions of complex constructs during ECL to Spark translation": 4,
+        "Manual intervention and solutions of complex constructs during ECL to Spring boot translation": 4,
         "Data recon and pipeline testing, including test case creation, validation of intermediate datasets, and output comparison": 2,
         "Syntax Differences": 1,
         "Optimization Techniques": 2
       },
       "Major Contributors": {
         "Rewriting nested TRANSFORMs or rollups": 2,
-        "Refactoring OUTPUT statements for Spark write APIs": 1,
+        "Refactoring OUTPUT statements for Spring boot write APIs": 1,
         "Managing schema consistency across distributed stages": 1
       }
     },

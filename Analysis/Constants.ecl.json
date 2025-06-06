@@ -51,14 +51,14 @@
     "TRANSFORM logic for file name trimming."
     ]
     },
-    "4. Manual Adjustments for Java Spark Migration": {
-    "Transform Refactoring": "Refactor TRANSFORM logic into a Spark UDF to handle file name trimming.",
-    "Schema Redefinition": "Convert RECORD structures into Spark DataFrame schemas or case classes.",
+    "4. Manual Adjustments for Java Spring boot Migration": {
+    "Transform Refactoring": "Refactor TRANSFORM logic into a Spring boot UDF to handle file name trimming.",
+    "Schema Redefinition": "Convert RECORD structures into Spring boot DataFrame schemas or case classes.",
     "Join Handling Strategy": "No joins are present in the script.",
-    "Complex Ops Handling": "Rewrite PROJECT operation using Spark DataFrame transformations.",
-    "Output Refactoring": "Replace OUTPUT with Spark write operations to HDFS or Parquet."
+    "Complex Ops Handling": "Rewrite PROJECT operation using Spring boot DataFrame transformations.",
+    "Output Refactoring": "Replace OUTPUT with Spring boot write operations to HDFS or Parquet."
     },
-    "5. Optimization Techniques in Spark": {
+    "5. Optimization Techniques in Spring boot": {
     "Join Optimization": "Not applicable as no joins are present.",
     "Partitioning Strategy": "Partition datasets based on file name prefixes to optimize spraying.",
     "Caching Strategy": "Cache intermediate results if reused in subsequent operations.",
@@ -69,7 +69,7 @@
     }
     },
     "6. Cost Estimation": {
-    "Java Spark Runtime Cost": {
+    "Java Spring boot Runtime Cost": {
     "Cluster Configuration": {
     "Number of Executors": 4,
     "Executor Memory": "8 GB",
@@ -103,7 +103,7 @@
     },
     "Major Contributors to Effort": {
     "Nested TRANSFORM Refactoring": 2,
-    "Output Refactoring for Spark Writes": 1,
+    "Output Refactoring for Spring boot Writes": 1,
     "Schema Management Effort": 1
     }
     },
