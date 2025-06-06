@@ -1,0 +1,58 @@
+{
+  "title": "ECL Design Pattern Analysis and Java Spark Optimization Recommendations",
+  "pattern_summary": [
+    {
+      "pattern": "SF+ST+JL",
+      "frequency": "3 occurrences",
+      "percentage": "50%",
+      "description": "Combination of reading from file source, table source, and joining data with another table"
+    },
+    {
+      "pattern": "TAC+TAG+DQ",
+      "frequency": "2 occurrences",
+      "percentage": "33.33%",
+      "description": "Combination of arithmetic calculations, aggregate functions, and data quality checks"
+    },
+    {
+      "pattern": "TF+TT+DU",
+      "frequency": "1 occurrence",
+      "percentage": "16.67%",
+      "description": "Combination of writing to file target, table target, and performing update operations"
+    }
+  ],
+  "detailed_patterns": [
+    {
+      "pattern": "SF+ST+JL",
+      "description": "This combination represents workflows where data is read from both file and table sources and then joined with another table.",
+      "spark_suitability": "Highly suitable for Java Spark due to its distributed processing capabilities and efficient join operations.",
+      "recommendations": [
+        "Use broadcast joins for smaller datasets to optimize performance.",
+        "Leverage partitioning to minimize shuffle operations during joins.",
+        "Ensure data is cached appropriately to avoid repeated I/O operations.",
+        "Use columnar file formats like Parquet for efficient data reading."
+      ]
+    },
+    {
+      "pattern": "TAC+TAG+DQ",
+      "description": "This combination involves transformations with arithmetic and aggregate calculations, alongside data quality checks.",
+      "spark_suitability": "Well-suited for Java Spark as it provides built-in functions for arithmetic and aggregate operations, along with support for data validation.",
+      "recommendations": [
+        "Utilize Spark's built-in functions for arithmetic and aggregate calculations to simplify code.",
+        "Implement data quality checks using DataFrame APIs for better readability and maintainability.",
+        "Cache intermediate results to optimize performance during iterative transformations.",
+        "Use accumulator variables for tracking data quality metrics efficiently."
+      ]
+    },
+    {
+      "pattern": "TF+TT+DU",
+      "description": "This combination represents workflows where data is written to file and table targets, with updates performed on existing data.",
+      "spark_suitability": "Suitable for Java Spark, especially with structured streaming and batch processing capabilities.",
+      "recommendations": [
+        "Use Spark's DataFrame write operations with mode options like 'overwrite' or 'append' for flexibility.",
+        "Leverage partitioning and bucketing for efficient data writes.",
+        "Implement update operations using Delta Lake for ACID compliance and versioning.",
+        "Optimize file writes by using compression codecs like Snappy or Zlib."
+      ]
+    }
+  ]
+}

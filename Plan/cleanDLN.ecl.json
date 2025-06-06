@@ -1,0 +1,44 @@
+{
+"1. Cost Estimation": {
+"1.1 Java Springboot Runtime Cost": {
+"Cluster Configuration": {
+"Number of Executors": 2,
+"Executor Memory": "8 GB",
+"Driver Memory": "4 GB"
+},
+"Approximate Data Volume Processed": {
+"Input Data": "50–100 GB",
+"Output Data": "10–15 GB"
+},
+"Time Taken for Each Phase": {
+"Shuffle-heavy JOINs": "Not applicable",
+"Wide Transforms (e.g., ROLLUP, DENORMALIZE)": "30 minutes",
+"Output Writes": "15 minutes"
+},
+"Cost Model": {
+"Pricing Model (e.g., DBU, vCPU Hour)": "AWS EC2 pricing at $0.0146 per DBU per hour.",
+"Total Runtime Cost": "$0.50–$1.00"
+},
+"Justification": [
+"Minimal data processing requirements.",
+"Efficient regex and conditional logic."
+]
+}
+},
+"2. Code Fixing and Data Recon Testing Effort Estimation": {
+"2.1 Estimated Effort in Hours": {
+"Manual intervention and solutions of complex constructs during ECL to Java Springboot translation": 5,
+"Data recon and pipeline testing, including test case creation, validation of intermediate datasets, and output comparison": 3,
+"Syntax Differences": 2,
+"Optimization Techniques": 4
+},
+"Major Contributors": {
+"Rewriting nested TRANSFORMs or rollups": 0,
+"Refactoring OUTPUT statements for Java Springboot write APIs": 2,
+"Managing schema consistency across distributed stages": 3
+}
+},
+"3. API Cost": {
+"apiCost": 0.013452
+}
+}

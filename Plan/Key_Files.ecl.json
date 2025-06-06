@@ -1,0 +1,44 @@
+{
+  "1. Cost Estimation": {
+    "1.1 Java Springboot Runtime Cost": {
+      "Cluster Configuration": {
+        "Number of Executors": 4,
+        "Executor Memory": "16 GB",
+        "Driver Memory": "8 GB"
+      },
+      "Approximate Data Volume Processed": {
+        "Input Data": "90 GB (ReferenceCodeDataset and FilteredReferenceCode combined)",
+        "Output Data": "50 GB (Indexed datasets OffenseCodeIndex and ReferenceCodeIndex)"
+      },
+      "Time Taken for Each Phase": {
+        "Shuffle-heavy JOINs": "N/A",
+        "Wide Transforms (e.g., ROLLUP, DENORMALIZE)": "N/A",
+        "Output Writes": "1 hour"
+      },
+      "Cost Model": {
+        "Pricing Model (e.g., DBU, vCPU Hour)": "Cloud provider pricing details (e.g., $0.0146–$0.1008 per hour)",
+        "Total Runtime Cost": "Approximately $0.0584 per hour based on EC2 pricing for the cluster configuration"
+      },
+      "Justification": [
+        "Simple dataset operations and indexing.",
+        "Minimal resource requirements due to lack of joins or complex transforms."
+      ]
+    }
+  },
+  "2. Code Fixing and Data Recon Testing Effort Estimation": {
+    "2.1 Estimated Effort in Hours": {
+      "Manual intervention and solutions of complex constructs during ECL to Java Springboot translation": 10,
+      "Data recon and pipeline testing, including test case creation, validation of intermediate datasets, and output comparison": 5,
+      "Syntax Differences": 5,
+      "Optimization Techniques": 5
+    },
+    "Major Contributors": {
+      "Rewriting nested TRANSFORMs or rollups": 0,
+      "Refactoring OUTPUT statements for Java Springboot write APIs": 5,
+      "Managing schema consistency across distributed stages": 5
+    }
+  },
+  "3. API Cost": {
+    "apiCost": 0.013452
+  }
+}

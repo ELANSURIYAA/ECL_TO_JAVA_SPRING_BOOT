@@ -1,0 +1,102 @@
+{
+"Constants.ecl": {
+"1. Script Overview": {
+"Summary": "This ECL script defines a module named Constants, which serves as a centralized repository for static values used across the system. Its primary purpose is to provide reusable constants that can be referenced in other parts of the ECL codebase. The script addresses the business need for consistency and maintainability by centralizing frequently used values.",
+"Functional Modules": [
+"MODULE: Encapsulates all definitions within the Constants module.",
+"EXPORT: Makes the defined constants accessible outside the module."
+],
+"Data Pipelines Overview": "The script does not orchestrate any data flows or batch processes. It provides static values that can be used as inputs or parameters in other scripts."
+},
+"2. Complexity Metrics": {
+"Total Lines of Code": 5,
+"Dataset Count": 0,
+"Transform Count and Types": [],
+"Join Analysis": {
+"Join Count": 0,
+"Join Types": []
+},
+"Project, Sort, Dedup, Rollup Counts": {
+"Project Count": 0,
+"Sort Count": 0,
+"Dedup Count": 0,
+"Rollup Count": 0
+},
+"Child Workflows or Module Calls": 0,
+"Output or Store Operations": 0,
+"Conditional Logic Count": 0,
+"Macro or Function Module Reuse": 0,
+"Conversion Complexity Score": {
+"Score (0–100)": 5,
+"Reasoning": [
+"No incompatible features.",
+"No manual refactor points.",
+"No workflow orchestration challenges.",
+"Minimal volume and nesting of datasets or compound transforms."
+]
+}
+},
+"3. Feature Compatibility Check": {
+"Incompatible Features": [],
+"Examples of Challenging Constructs": []
+},
+"4. Manual Adjustments for Java Springboot Migration": {
+"Transform Refactoring": "No TRANSFORMs present, no refactoring needed.",
+"Schema Redefinition": "Convert constants to static variables or configuration properties in Java Springboot.",
+"Join Handling Strategy": "No JOINs present, no strategy needed.",
+"Complex Ops Handling": "No NORMALIZE, ROLLUP, or DEDUP operations present.",
+"Output Refactoring": "No OUTPUT operations present, no refactoring needed."
+},
+"5. Optimization Techniques in Java Springboot": {
+"Join Optimization": "Not applicable.",
+"Partitioning Strategy": "Not applicable.",
+"Caching Strategy": "Not applicable.",
+"Code Optimization Techniques": "Not applicable.",
+"Refactor vs Rebuild Recommendation": {
+"Approach": "Refactor with minimal changes.",
+"Justification": "The script is simple and only defines constants. Refactoring these into Java Springboot static variables or configuration properties is straightforward and requires minimal effort."
+}
+},
+"6. Cost Estimation": {
+"Java Springboot Runtime Cost": {
+"Cluster Configuration": {
+"Number of Executors": 0,
+"Executor Memory": "0 GB",
+"Driver Memory": "0 GB"
+},
+"Approximate Data Volume Processed": {
+"Input Data": "0 GB",
+"Output Data": "0 GB"
+},
+"Time Taken for Each Phase": {
+"Shuffle-heavy Joins": "0 hours",
+"Wide Transforms": "0 hours",
+"Output Writes": "0 hours"
+},
+"Cost Model": {
+"Pricing Basis": "No runtime cost as the script only defines constants.",
+"Total Estimated Cost": "0 USD"
+},
+"Justification": [
+"No data processing or runtime operations involved."
+]
+}
+},
+"7. Code Fixing and Data Recon Testing Effort Estimation": {
+"Estimated Effort in Hours": {
+"Manual Refactoring": 1,
+"Data Reconciliation Testing": 0,
+"Syntax Translation Adjustments": 1,
+"Optimization and Performance Tuning": 0
+},
+"Major Contributors to Effort": {
+"Nested TRANSFORM Refactoring": 0,
+"Output Refactoring for Java Springboot Writes": 0,
+"Schema Management Effort": 1
+}
+},
+"8. API Cost": {
+"apiCost": "0.013452 USD"
+}
+}
+}

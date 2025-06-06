@@ -1,0 +1,114 @@
+{
+"Layouts.ecl": {
+"1. Script Overview": {
+"Summary": "This ECL script defines modular data structures for processing and transforming datasets related to offenses and reference codes. It focuses on data traceability, validation, and integration for regulatory compliance and operational decision-making.",
+"Functional Modules": [
+"TextSegment: Defines text line segments with fields like lineNumber, segmentNumber, and description.",
+"TextSegmentPlus: Extends TextSegment with additional fields like operatorIdentifier and sequenceNumber.",
+"OffenseRecord: Encapsulates offense-related data with fields for offense codes, suspension dates, and text segments.",
+"ProcessedOffenses: Represents transformed offense records with mappings from OffenseRecord and additional fields for reference data.",
+"OffenseResultRec: Defines the structure for offense results with fields for sequence, statePostalCode, and OffenseRecord.",
+"ReferenceCodes: Contains reference code mappings with fields like dataType, code, and mapper fields with MAXLENGTH constraints."
+],
+"Data Pipelines Overview": "The script orchestrates data flows by defining raw input structures, applying transformations, and preparing datasets like ProcessedOffenses and ReferenceCodes for downstream consumption."
+},
+"2. Complexity Metrics": {
+"Total Lines of Code": 100,
+"Dataset Count": 4,
+"Transform Count and Types": [],
+"Join Analysis": {
+"Join Count": 0,
+"Join Types": []
+},
+"Project, Sort, Dedup, Rollup Counts": {
+"Project Count": 0,
+"Sort Count": 0,
+"Dedup Count": 0,
+"Rollup Count": 0
+},
+"Child Workflows or Module Calls": 0,
+"Output or Store Operations": 0,
+"Conditional Logic Count": 0,
+"Macro or Function Module Reuse": 0,
+"Conversion Complexity Score": {
+"Score (0–100)": 45,
+"Reasoning": [
+"No explicit JOINs or TRANSFORMs defined.",
+"Modular RECORD definitions simplify migration but require manual schema mapping.",
+"Field constraints like MAXLENGTH need manual refactoring."
+]
+}
+},
+"3. Feature Compatibility Check": {
+"Incompatible Features": [
+"Implicit schema typing in RECORD definitions.",
+"MAXLENGTH constraints on fields.",
+"Dataset transformations like textSegments within OffenseRecord."
+],
+"Examples of Challenging Constructs": [
+"Complex RECORD structures like OffenseRecord and ProcessedOffenses.",
+"Global aggregates and nested datasets within RECORD definitions."
+]
+},
+"4. Manual Adjustments for Java Springboot Migration": {
+"Transform Refactoring": "Refactor RECORD definitions into Java Springboot schema objects or case classes.",
+"Schema Redefinition": "Manually map fields and constraints like MAXLENGTH to Java schema definitions.",
+"Join Handling Strategy": "No JOINs defined, but any future JOINs will need explicit handling using Java Springboot DataFrame APIs.",
+"Complex Ops Handling": "Refactor nested datasets like textSegments using Java Springboot's nested schema capabilities.",
+"Output Refactoring": "Define explicit output targets like HDFS or Parquet for downstream consumption."
+},
+"5. Optimization Techniques in Java Springboot": {
+"Join Optimization": "Use broadcast joins for small reference datasets and shuffle joins for large datasets.",
+"Partitioning Strategy": "Partition datasets based on key fields like operatorIdentifier or offenseCode.",
+"Caching Strategy": "Cache intermediate results to optimize performance during transformations.",
+"Code Optimization Techniques": "Leverage Catalyst optimizer hints and DataFrame API tuning for efficient processing.",
+"Refactor vs Rebuild Recommendation": {
+"Approach": "Refactor with minimal changes.",
+"Justification": "The modular design and explicit field definitions simplify migration, requiring only schema adjustments and minor refactoring."
+}
+},
+"6. Cost Estimation": {
+"Java Springboot Runtime Cost": {
+"Cluster Configuration": {
+"Number of Executors": 4,
+"Executor Memory": "16 GB",
+"Driver Memory": "8 GB"
+},
+"Approximate Data Volume Processed": {
+"Input Data": "50–100 GB",
+"Output Data": "10–15 GB"
+},
+"Time Taken for Each Phase": {
+"Shuffle-heavy Joins": "N/A",
+"Wide Transforms": "2 hours",
+"Output Writes": "1 hour"
+},
+"Cost Model": {
+"Pricing Basis": "Cloud provider pricing details (e.g., DBU cost per hour)",
+"Total Estimated Cost": "Example calculation showing cost formula"
+},
+"Justification": [
+"Cluster configuration ensures optimal performance for processing large datasets.",
+"Cost estimation based on typical cloud provider pricing for compute and storage."
+]
+}
+},
+"7. Code Fixing and Data Recon Testing Effort Estimation": {
+"Estimated Effort in Hours": {
+"Manual Refactoring": 40,
+"Data Reconciliation Testing": 20,
+"Syntax Translation Adjustments": 15,
+"Optimization and Performance Tuning": 25
+},
+"Major Contributors to Effort": {
+"Nested TRANSFORM Refactoring": 10,
+"Output Refactoring for Java Springboot Writes": 10,
+"Schema Management Effort": 20
+}
+},
+"8. API Cost": {
+"apiCost": "0.013452 USD"
+}
+}
+}
+

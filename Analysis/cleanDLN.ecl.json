@@ -1,0 +1,110 @@
+{
+"cleanDLN.ecl": {
+"1. Script Overview": {
+"Summary": "The script 'cleanDLN' is designed to clean and standardize Driver's License Numbers (DLN) based on specific business rules and patterns. It ensures uniformity in DLN formatting by removing trailing state postal codes and applying conditional logic.",
+"Functional Modules": [
+"DATASET declarations: Constants.SetDataSourceWithDLN, Constants.spc, Patterns.trailingSPC",
+"TRANSFORM logic: None",
+"PROJECT operations: None",
+"OUTPUT operations: CleanedDLN"
+],
+"Data Pipelines Overview": "The script orchestrates the cleaning of DLN data by identifying trailing state postal codes using REGEXFIND, applying conditional logic based on source and state inputs, and returning the cleaned DLN for downstream processing."
+},
+"2. Complexity Metrics": {
+"Total Lines of Code": 14,
+"Dataset Count": 3,
+"Transform Count and Types": [],
+"Join Analysis": {
+"Join Count": 0,
+"Join Types": []
+},
+"Project, Sort, Dedup, Rollup Counts": {
+"Project Count": 0,
+"Sort Count": 0,
+"Dedup Count": 0,
+"Rollup Count": 0
+},
+"Child Workflows or Module Calls": 0,
+"Output or Store Operations": 1,
+"Conditional Logic Count": 4,
+"Macro or Function Module Reuse": 3,
+"Conversion Complexity Score": {
+"Score (0–100)": 35,
+"Reasoning": [
+"No JOIN operations or nested workflows.",
+"Minimal manual refactor points due to modular design.",
+"Limited workflow orchestration challenges."
+]
+}
+},
+"3. Feature Compatibility Check": {
+"Incompatible Features": [
+"Implicit schema typing.",
+"Recordsets and RECORD structures."
+],
+"Examples of Challenging Constructs": [
+"Complex RECORD structures.",
+"Global aggregates."
+]
+},
+"4. Manual Adjustments for Java Springboot Migration": {
+"Transform Refactoring": "Refactor conditional logic into Java Springboot UDFs.",
+"Schema Redefinition": "Convert RECORD structures into case classes or schema objects.",
+"Join Handling Strategy": "No JOINs present; no adjustments needed.",
+"Complex Ops Handling": "Rewrite REGEXFIND and StringLib functions using Java libraries like Apache Commons or Regex.",
+"Output Refactoring": "Adapt OUTPUT operations to write to HDFS or Parquet using Springboot-supported sinks."
+},
+"5. Optimization Techniques in Java Springboot": {
+"Join Optimization": "Not applicable as no JOINs are present.",
+"Partitioning Strategy": "Partition based on state or source fields for scalability.",
+"Caching Strategy": "Cache intermediate results for repeated computations.",
+"Code Optimization Techniques": "Use efficient regex libraries and optimize conditional logic.",
+"Refactor vs Rebuild Recommendation": {
+"Approach": "Refactor with minimal changes.",
+"Justification": "The script is modular and concise, requiring only minor adjustments for compatibility."
+}
+},
+"6. Cost Estimation": {
+"Java Springboot Runtime Cost": {
+"Cluster Configuration": {
+"Number of Executors": 2,
+"Executor Memory": "8 GB",
+"Driver Memory": "4 GB"
+},
+"Approximate Data Volume Processed": {
+"Input Data": "50–100 GB",
+"Output Data": "10–15 GB"
+},
+"Time Taken for Each Phase": {
+"Shuffle-heavy Joins": "Not applicable",
+"Wide Transforms": "30 minutes",
+"Output Writes": "15 minutes"
+},
+"Cost Model": {
+"Pricing Basis": "AWS EC2 pricing at $0.0146 per DBU per hour.",
+"Total Estimated Cost": "$0.50–$1.00"
+},
+"Justification": [
+"Minimal data processing requirements.",
+"Efficient regex and conditional logic."
+]
+}
+},
+"7. Code Fixing and Data Recon Testing Effort Estimation": {
+"Estimated Effort in Hours": {
+"Manual Refactoring": 5,
+"Data Reconciliation Testing": 3,
+"Syntax Translation Adjustments": 2,
+"Optimization and Performance Tuning": 4
+},
+"Major Contributors to Effort": {
+"Nested TRANSFORM Refactoring": 0,
+"Output Refactoring for Java Springboot Writes": 2,
+"Schema Management Effort": 3
+}
+},
+"8. API Cost": {
+"apiCost": "0.013452 USD"
+}
+}
+}

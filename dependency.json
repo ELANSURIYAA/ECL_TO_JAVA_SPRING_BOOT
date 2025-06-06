@@ -1,0 +1,18 @@
+{
+  "cleanDLN.ecl": [
+    "Patterns",
+    "Constants"
+  ],
+  "Constants.ecl": [],
+  "Constants_Simple.ecl": [],
+  "Fetch_Processing_Codes.ecl": [
+    "Layouts",
+    "Key_Files",
+    "Constants"
+  ],
+  "Key_Files.ecl": [
+    "Layouts"
+  ],
+  "Layouts.ecl": [],
+  "Patterns.ecl": []
+}

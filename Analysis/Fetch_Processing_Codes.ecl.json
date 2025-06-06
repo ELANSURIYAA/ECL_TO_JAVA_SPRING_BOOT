@@ -1,0 +1,118 @@
+{
+"Fetch_Processing_Codes.ecl": {
+"1. Script Overview": {
+"Summary": "The script processes and transforms offense-related datasets, integrating reference codes for offenses, dispositions, and case statuses. It ensures accurate and standardized offense data mapping across jurisdictions.",
+"Functional Modules": [
+"DATASET declarations: inOffenses, seqOffenses, OffenseCodes, DispositionCodes, caseCodes, processedOffenses, srtProcessedOffenses, ddProcessedOffenses, combinedOffenses, DMVCodeCodes.",
+"TRANSFORM logic: sequenceOffenses, combineOffenses.",
+"PROJECT operations: seqOffenses.",
+"JOIN operations: OffenseCodes, DispositionCodes, caseCodes, DMVCodeCodes.",
+"ROLLUP operations: combinedOffenses.",
+"OUTPUT operations: Conditional debug outputs for intermediate datasets."
+],
+"Data Pipelines Overview": "The script orchestrates a data pipeline that sequences offenses, maps reference codes, deduplicates data, and generates summary records for offenses."
+},
+"2. Complexity Metrics": {
+"Total Lines of Code": 87,
+"Dataset Count": 10,
+"Transform Count and Types": [
+{"Type": "sequenceOffenses", "Count": 1},
+{"Type": "combineOffenses", "Count": 1}
+],
+"Join Analysis": {
+"Join Count": 4,
+"Join Types": ["LEFT OUTER"]
+},
+"Project, Sort, Dedup, Rollup Counts": {
+"Project Count": 1,
+"Sort Count": 1,
+"Dedup Count": 1,
+"Rollup Count": 1
+},
+"Child Workflows or Module Calls": 0,
+"Output or Store Operations": 10,
+"Conditional Logic Count": 15,
+"Macro or Function Module Reuse": 0,
+"Conversion Complexity Score": {
+"Score (0–100)": 75,
+"Reasoning": [
+"High number of incompatible features like RECORD structures and implicit schema typing.",
+"Manual refactor points for JOINs and TRANSFORMs.",
+"Workflow orchestration challenges due to nested operations."
+]
+}
+},
+"3. Feature Compatibility Check": {
+"Incompatible Features": [
+"Implicit schema typing.",
+"RECORD structures.",
+"Dataset transformations like PROJECT, ROLLUP, and DEDUP.",
+"Global aggregates with GROUP."
+],
+"Examples of Challenging Constructs": [
+"Complex RECORD structures for processed offenses.",
+"ROLLUP operations for summarizing data.",
+"JOINs with complex conditions and limits."
+]
+},
+"4. Manual Adjustments for Java Springboot Migration": {
+"Transform Refactoring": "Refactor TRANSFORMs into Java Springboot UDFs using functional programming constructs.",
+"Schema Redefinition": "Convert RECORD structures into case classes or schema objects.",
+"Join Handling Strategy": "Rewrite JOINs using Java Springboot DataFrame API with explicit join conditions.",
+"Complex Ops Handling": "Use Java Springboot equivalents like groupBy and reduce for ROLLUP and deduplication.",
+"Output Refactoring": "Rewrite OUTPUTs to HDFS, Parquet, or other Java Springboot-supported sinks."
+},
+"5. Optimization Techniques in Java Springboot": {
+"Join Optimization": "Use broadcast joins for small reference datasets and shuffle joins for large datasets.",
+"Partitioning Strategy": "Partition datasets based on key fields like offenseSeq.",
+"Caching Strategy": "Cache intermediate results to optimize performance.",
+"Code Optimization Techniques": "Leverage Catalyst optimizer hints and DataFrame API tuning.",
+"Refactor vs Rebuild Recommendation": {
+"Approach": "Rebuild logic.",
+"Justification": "Better alignment with Java Springboot's distributed compute environment and optimization capabilities."
+}
+},
+"6. Cost Estimation": {
+"Java Springboot Runtime Cost": {
+"Cluster Configuration": {
+"Number of Executors": 10,
+"Executor Memory": "16 GB",
+"Driver Memory": "8 GB"
+},
+"Approximate Data Volume Processed": {
+"Input Data": "50–100 GB",
+"Output Data": "10–15 GB"
+},
+"Time Taken for Each Phase": {
+"Shuffle-heavy Joins": "2 hours",
+"Wide Transforms": "3 hours",
+"Output Writes": "1 hour"
+},
+"Cost Model": {
+"Pricing Basis": "Cloud provider pricing details (e.g., DBU cost per hour)",
+"Total Estimated Cost": "Example calculation showing cost formula"
+},
+"Justification": [
+"Chosen configuration balances memory and compute requirements for large datasets.",
+"Pricing estimates based on typical cloud provider costs for distributed computing."
+]
+}
+},
+"7. Code Fixing and Data Recon Testing Effort Estimation": {
+"Estimated Effort in Hours": {
+"Manual Refactoring": 40,
+"Data Reconciliation Testing": 20,
+"Syntax Translation Adjustments": 15,
+"Optimization and Performance Tuning": 25
+},
+"Major Contributors to Effort": {
+"Nested TRANSFORM Refactoring": 15,
+"Output Refactoring for Java Springboot Writes": 10,
+"Schema Management Effort": 15
+}
+},
+"8. API Cost": {
+"apiCost": "0.013452 USD"
+}
+}
+}

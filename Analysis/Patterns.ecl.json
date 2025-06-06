@@ -1,0 +1,98 @@
+{
+"Patterns.ecl": {
+"1. Script Overview": {
+"Summary": "This ECL script defines a module named 'Patterns' that exports a single constant pattern 'trailingSPC'. The primary purpose of this script is to provide a reusable pattern for identifying strings ending with two uppercase letters. It addresses the need for standardized string pattern matching in data processing workflows. The script is lightweight and designed for integration into larger ECL applications, serving as a utility module.",
+"Functional Modules": [
+"Module 'Patterns' encapsulates a single export named 'trailingSPC'. This export is a regular expression pattern designed to match strings ending with two uppercase letters."
+],
+"Data Pipelines Overview": "The script does not process any datasets directly. Instead, it provides a reusable pattern that can be applied to string data in other ECL scripts. The pattern 'trailingSPC' is designed to identify strings ending with two uppercase letters, which can be used in filtering, validation, or transformation operations in downstream workflows."
+},
+"2. Complexity Metrics": {
+"Total Lines of Code": 5,
+"Dataset Count": 0,
+"Transform Count and Types": [],
+"Join Analysis": {
+"Join Count": 0,
+"Join Types": []
+},
+"Project, Sort, Dedup, Rollup Counts": {
+"Project Count": 0,
+"Sort Count": 0,
+"Dedup Count": 0,
+"Rollup Count": 0
+},
+"Child Workflows or Module Calls": 0,
+"Output or Store Operations": 0,
+"Conditional Logic Count": 0,
+"Macro or Function Module Reuse": 0,
+"Conversion Complexity Score": {
+"Score (0–100)": 5,
+"Reasoning": [
+"The script is lightweight with no incompatible features, manual refactor points, or workflow orchestration challenges. Its simplicity ensures a low complexity score."
+]
+}
+},
+"3. Feature Compatibility Check": {
+"Incompatible Features": [],
+"Examples of Challenging Constructs": []
+},
+"4. Manual Adjustments for Java Springboot Migration": {
+"Transform Refactoring": "No TRANSFORMs exist in the script, so no refactoring is needed.",
+"Schema Redefinition": "No RECORD structures exist in the script, so no schema redefinition is needed.",
+"Join Handling Strategy": "No JOINs exist in the script, so no handling strategy is needed.",
+"Complex Ops Handling": "No NORMALIZE, ROLLUP, or DEDUP operations exist in the script, so no handling is needed.",
+"Output Refactoring": "No OUTPUT statements exist in the script, so no refactoring is needed."
+},
+"5. Optimization Techniques in Java Springboot": {
+"Join Optimization": "Not applicable as no JOINs exist.",
+"Partitioning Strategy": "Not applicable as no datasets are processed.",
+"Caching Strategy": "Not applicable as no intermediate results are generated.",
+"Code Optimization Techniques": "Not applicable as the script is lightweight and does not involve complex operations.",
+"Refactor vs Rebuild Recommendation": {
+"Approach": "Refactor with minimal changes",
+"Justification": "The script is simple and modular, requiring no major changes for migration. It can be directly refactored into a Java Springboot utility class or method."
+}
+},
+"6. Cost Estimation": {
+"Java Springboot Runtime Cost": {
+"Cluster Configuration": {
+"Number of Executors": 0,
+"Executor Memory": "0 GB",
+"Driver Memory": "0 GB"
+},
+"Approximate Data Volume Processed": {
+"Input Data": "0 GB",
+"Output Data": "0 GB"
+},
+"Time Taken for Each Phase": {
+"Shuffle-heavy Joins": "0 hours",
+"Wide Transforms": "0 hours",
+"Output Writes": "0 hours"
+},
+"Cost Model": {
+"Pricing Basis": "No runtime cost as the script does not involve data processing.",
+"Total Estimated Cost": "0 USD"
+},
+"Justification": [
+"The script does not involve data processing or runtime operations, resulting in no associated costs."
+]
+}
+},
+"7. Code Fixing and Data Recon Testing Effort Estimation": {
+"Estimated Effort in Hours": {
+"Manual Refactoring": 1,
+"Data Reconciliation Testing": 0,
+"Syntax Translation Adjustments": 1,
+"Optimization and Performance Tuning": 0
+},
+"Major Contributors to Effort": {
+"Nested TRANSFORM Refactoring": 0,
+"Output Refactoring for Java Springboot Writes": 0,
+"Schema Management Effort": 0
+}
+},
+"8. API Cost": {
+"apiCost": "0.013452 USD"
+}
+}
+}

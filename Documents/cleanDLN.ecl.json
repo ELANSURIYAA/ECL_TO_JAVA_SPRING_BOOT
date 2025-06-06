@@ -1,0 +1,38 @@
+{
+  "1. Overview of Program": "The ECL script 'cleanDLN' is designed to process and clean Driver's License Numbers (DLNs) by removing trailing state postal codes and applying specific transformations based on the data source and state. This script is crucial for ensuring data consistency and standardization, particularly in systems that rely on uniform DLN formats for validation and processing. It addresses the business problem of inconsistent DLN formats across different sources and states, ensuring compatibility with downstream systems. The script connects to predefined constants and utilizes regex-based logic to identify and remove unwanted patterns. Key operations include pattern matching, substring extraction, conditional transformations, and final output generation of cleaned DLNs.",
+  "2. Code Structure and Design": "The script is structured as a single FUNCTION named 'cleanDLN' that takes three parameters: 'dln' (Driver's License Number), 'source' (data source identifier), and 'state' (state postal code). It employs regex-based pattern matching to identify trailing state postal codes, conditional logic to determine the cleaning process based on the source and state, and string manipulation functions for transformations. Constants and reusable logic are encapsulated in external modules like 'Patterns' and 'Constants', ensuring modularity and maintainability. The function returns a cleaned DLN or an empty string if conditions are not met.",
+  "3. Data Flow and Processing Logic": {
+    "Processed Datasets": ["Patterns.trailingSPC", "Constants.SetDataSourceWithDLN", "Constants.spc"],
+    "Data Flow": "The script begins by identifying trailing state postal codes in the input DLN using a regex pattern from 'Patterns.trailingSPC'. It calculates the position and count of the trailing postal code, if present. Based on the source and state, the script applies conditional logic to clean the DLN by either removing unwanted characters or retaining the original substring. The final cleaned DLN is returned as output."
+  },
+  "4. Data Mapping": [
+    {
+      "Target Dataset Name": "CleanedDLN",
+      "Target Field Name": "CleanedDLN",
+      "Source Dataset Name": "dln",
+      "Source Field Name": "dln",
+      "Transformation Logic": "Regex-based pattern matching and conditional substring extraction",
+      "Business Purpose": "To standardize and clean Driver's License Numbers for consistent downstream processing"
+    }
+  ],
+  "5. Performance Optimization Strategies": "The script employs regex-based pattern matching for efficient identification of trailing postal codes, minimizing unnecessary iterations. Conditional logic is used to avoid redundant transformations, and string manipulation functions are applied selectively based on the input conditions. The modular design, with external constants and patterns, ensures that the script can handle large datasets efficiently by focusing only on relevant transformations.",
+  "6. Technical Elements and Best Practices": "The script uses external modules like 'Patterns' and 'Constants' to encapsulate reusable logic and maintain modularity. Error handling is implicit, with conditions ensuring that invalid inputs result in an empty string. Naming conventions are clear and descriptive, aiding readability and maintainability. The use of regex patterns and string manipulation functions demonstrates adherence to best practices for text processing. The modular design ensures that updates to patterns or constants do not require changes to the core logic.",
+  "7. Complexity Analysis": {
+    "Number of Lines": 15,
+    "Datasets Used": 3,
+    "Joins Used": "None",
+    "TRANSFORM Functions": "None",
+    "RECORD Definitions": "None",
+    "OUTPUT Statements": 0,
+    "Conditional Logic": 3,
+    "Indexing and Lookups": "None",
+    "Function Calls": 3,
+    "Performance Controls": "Efficient use of regex and conditional logic",
+    "External Dependencies": ["Patterns", "Constants"],
+    "Overall Complexity Score": 25
+  },
+  "8. Key Outputs": [
+    "CleanedDLN: A standardized and cleaned Driver's License Number"
+  ],
+  "Business Purpose of Outputs": "The cleaned DLN ensures consistency and standardization across different data sources and states, enabling accurate validation and processing in downstream systems. The output supports business needs by reducing errors and improving data quality, which is critical for systems relying on uniform DLN formats."
+}

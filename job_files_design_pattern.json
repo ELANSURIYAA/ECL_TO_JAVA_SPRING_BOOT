@@ -1,0 +1,30 @@
+{
+  "Constants.ecl": {
+    "design_pattern": ["SF", "OO"],
+    "oo_reason": "Contains constants that are used across multiple modules but does not fit into other specific categories."
+  },
+  "Layouts.ecl": {
+    "design_pattern": ["SF", "ST", "Tem", "OO"],
+    "oo_reason": "Defines multiple record structures and temporary datasets, which are foundational but do not fit into other specific categories."
+  },
+  "cleanDLN.ecl": {
+    "design_pattern": ["TAC", "TX", "OO"],
+    "oo_reason": "Implements transformation logic using arithmetic and external code references but does not fit into other specific categories."
+  },
+  "Fetch_Processing_Codes.ecl": {
+    "design_pattern": ["JL", "TAG", "TSC", "OO"],
+    "oo_reason": "Performs joins, aggregate calculations, and statistical transformations but does not fit into other specific categories."
+  },
+  "Key_Files.ecl": {
+    "design_pattern": ["SF", "ST", "JL", "OO"],
+    "oo_reason": "Defines source files and indexes for joins but does not fit into other specific categories."
+  },
+  "Patterns.ecl": {
+    "design_pattern": ["SF", "OO"],
+    "oo_reason": "Defines regex patterns used across modules but does not fit into other specific categories."
+  },
+  "Constants_Simple.ecl": {
+    "design_pattern": ["SF", "OO"],
+    "oo_reason": "Contains simplified constants for specific use cases but does not fit into other specific categories."
+  }
+}
